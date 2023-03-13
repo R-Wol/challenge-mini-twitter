@@ -69,14 +69,12 @@ function postTweet() {
 
     for (let i = 0; i < inputArray.length; i++) {
       if (inputArray[i].includes("@")) {
-        console.log(inputArray[i]);
         inputArray[i] = `<a href="https://www.twitter.com/${inputArray[i].slice(
           1
         )}" target=_blank>${inputArray[i]}</a>`;
       }
     }
 
-    console.log(inputArray);
     timeline.innerHTML = inputArray.join(" ");
 
     deleteIcon.addEventListener("click", () => {
